@@ -96,57 +96,57 @@
    $$
    d_{min}=(\sum_{i=1}^n|x_{i}-y_{i}|^m)^\frac{1}{m},m\ge1
    $$</p>
-<hr>
-
-<p>2.<i>Manhattan Distance</i></p>
+<ol>
+<li><i>Manhattan Distance</i></li>
+</ol>
 <p><i>Manhattan Distance</i> agak berbeda daripada <i>Minkowski Distance</i> dimana nilai m=1 sama halnya dengan <i>Minkowski Distance</i> yang sensitif terhadap oulier</p>
 <p>Rumus untuk <i>Manhattan Distance</i>  adalah:</p>
 <p>$$
    d_{man}=\sum_{i=1}^{n}|x_{i}-y_{i}|
    $$</p>
-<hr>
-
-<p>3.<i>Euclidean Distance</i></p>
+<ol>
+<li><i>Euclidean Distance</i></li>
+</ol>
 <p><i>Euclidean Distance</i> adalah perhitungan yang paling terkenal/banyak diketahui digunakan untuk data numerik. Ini berbeda daripada <i>Minkowski Distance</i> dimana nilai m = 2. <i>Euclidean Distance</i> berjalan baik disaat digunakan untuk datasets compact atau isolated clusters. Namun dia memiliki kelemahan yaitu jika dua vektor data tidak mempunyai atribut yang sama, mereka akan memiliki jarak yang lebih kecil dibandingan dengan pasangan data vektor yang mempuna nilai atribut yang sama</p>
-<hr>
-
-<p>4.<i>Average Distance</i></p>
+<ol>
+<li><i>Average Distance</i></li>
+</ol>
 <p>Mengenai kelemahan daripada <i>Euclidean Distance</i>, <i>Average Distance</i> adalah modifikasi daripada <i>Euclidean Distance</i> untuk memperbaiki hasil. untuk dua data x,y dalam dimensi-n, rumusnya adalah:
    $$
    d_{ave}=\left(\frac{1}{n}\sum_{i=1}^{n}(x_{i}-y_{i})^2\right)^\frac{1}{2}
    $$</p>
-<hr>
-
-<p>5.<i>Weighted Euclidean Distance</i></p>
+<ol>
+<li><i>Weighted Euclidean Distance</i></li>
+</ol>
 <p>Jika kedudukan masing masing atribut tersedia, <i>Weighted Euclidean Distance</i> adalah modifikasi dari <i>Euclidean Distance</i>. Jarak ini mempunyai rumus:</p>
 <p>$$
    d_{we}=\left(\sum_{i=1}^n w_{i}(x_{i}-y_{i}\right)^2)^\frac{1}{2}
    $$
    Dimana w adalah berat yang diberikan kepada komponen ke-i</p>
-<hr>
-
-<p>6.<i>Chord Distance</i></p>
+<ol>
+<li><i>Chord Distance</i></li>
+</ol>
 <p><i>Chord Distance</i> adalah hasil modifikasi lainnya dari <i>Euclidean Distance</i> untuk mengatasi kelemahan <i>Euclidean Distance</i> lainnya. jarak ini juga bisa digunakan untuk memecahkan masalah yang disebabkan skala pengukuran juga. Jarak ini bisa di kalkulasikan dari non-normalized data. rumus jarak ini adalah:
    $$
    d_{chord}=\left(2-2 \frac{{\sum_{i=1}^n}x_{i}y_{i}}{||x||<em>{2}||y||</em>{2}}\right)^\frac{1}{2}
    $$</p>
-<hr>
-
-<p>7.<i>Mahalanobis Distance</i></p>
+<ol>
+<li><i>Mahalanobis Distance</i></li>
+</ol>
 <p><i>Mahalobis Distance</i> adalah perbedaan ke Euclidean dan Manhattan distance yaitu jarak ini terbebas dari hubungan data yang mana dua data berasal</p>
 <p>$$
    d_{mah}=\sqrt{(x-y)S^{-1}(x-y)^{T}}
    $$</p>
-<hr>
-
-<p>8.<i>Cosine Measure</i></p>
+<ol>
+<li><i>Cosine Measure</i></li>
+</ol>
 <p>Persammaan Cosine kebanyakan digunakan untuk mencari kemiripan dokumen dan rumusnya adalah:
    $$
    Cosine(x,y)=\frac{\sum_{i=1}^{n}x_{i}{y_{i}}}{||x||2||y||2}
    $$</p>
-<hr>
-
-<p>9.<i>Pearson Correlation</i></p>
+<ol>
+<li><i>Pearson Correlation</i></li>
+</ol>
 <p><i>Pearson Correlation</i> Digunakan dalam clustering ekspresi data. Ukuran kemiripan menghitung kemiripan antara bentuk dari dua pola ekspresi. Rumusnya adalah:
    $$
    Pearson(x,y)=\frac{\sum_{i=1}^n(x_{i}-\mu_{x})(y_{i}-\mu_{y})}{\sqrt{\sum_{i=1}^n(x_{i}-y_{i})^2}\sqrt{\sum_{i=1}^n(x_{i}-y_{i})^2}}
