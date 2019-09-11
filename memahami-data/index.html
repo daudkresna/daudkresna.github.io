@@ -1,0 +1,994 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>Memahami data - Daud Kresna</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#memahami-data" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Daud Kresna" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Daud Kresna
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Memahami data
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/daudkresna/daudkresna.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Daud Kresna" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Daud Kresna
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/daudkresna/daudkresna.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Memahami data
+      </label>
+    
+    <a href="./" title="Memahami data" class="md-nav__link md-nav__link--active">
+      Memahami data
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#memahami-data" class="md-nav__link">
+    Memahami Data
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../jarak-data/" title="Menghitung Jarak antar Data tipe Numerik" class="md-nav__link">
+      Menghitung Jarak antar Data tipe Numerik
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#memahami-data" class="md-nav__link">
+    Memahami Data
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/daudkresna/daudkresna.github.io/edit/master/docs/memahami-data.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Memahami data</h1>
+                
+                <h2 id="memahami-data">Memahami Data</h2>
+<p>Ada banyak jenis data dan masing masing jenisnya membutuhkan tools dan teknik yang berbeda beda</p>
+<p>Data terbagi menjadi beberapa jenis yaitu</p>
+<ul>
+<li>
+<p><u>Data Terstruktur</u></p>
+</li>
+<li>
+<p><u>Data tidak terstruktur</u></p>
+</li>
+<li>
+<p><u>Data bahasa alami</u></p>
+</li>
+<li>
+<p><u>Machine Generated Data</u></p>
+</li>
+<li>
+<p><u>Data audio visual</u></p>
+</li>
+<li>
+<p><u>Data Streaming</u></p>
+</li>
+<li>
+<p><u>Data berbentuk Graph</u></p>
+</li>
+</ul>
+<p><code>Type Data Atribut</code></p>
+<ul>
+<li><strong><em>Atribut Biner</em></strong> termasuk nominal karena hanya kategori 0 dan 1</li>
+</ul>
+<p>​ ada 2 bentuk :</p>
+<ul>
+<li>​ <strong><em>Atribut simetris</em></strong> jika keduanya memiliki nilai yang sama (contoh: Tes Urin, Tes Buta Warna (Positif dan Negatif))</li>
+</ul>
+<p>​   Atribut Asimetris jika hasil dari nilai tidak sama pentingnya (contoh: hasil tes medis)</p>
+<ul>
+<li><strong><em>Atribut Ordinal</em></strong> adalah atribut dengan nilai yang memliki arti urutan atau peringkat tapi besarnya nilai berurutan tersebut tidak diketahui (Contoh: Sangat puas, cukup puas, tidak puas)</li>
+</ul>
+<p>​   Ukuran kecenderungan terpusat dari atribut ordinal dapat diwakili oleh modus dan median (nilai tengah)</p>
+<ul>
+<li><strong><em>Atribut Numerik</em></strong> bersifat kuantitatif terukur dinyatakan dengan bilangan bulat atau nilai riel</li>
+</ul>
+<p>Program untuk menampilkan statistik deskriptif dari kumpulan data:</p>
+<pre><code class="python">from scipy import stats
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+</code></pre>
+
+<pre><code class="python">df = pd.read_csv('Tinggi.csv')
+df
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Tinggi (cm)</th>
+      <th>Berat Badan (kg)</th>
+      <th>Panjang Kaki (size)</th>
+      <th>Umur (tahun)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>178</td>
+      <td>109</td>
+      <td>45</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>163</td>
+      <td>84</td>
+      <td>42</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>184</td>
+      <td>79</td>
+      <td>40</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>163</td>
+      <td>82</td>
+      <td>42</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>168</td>
+      <td>122</td>
+      <td>42</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>178</td>
+      <td>83</td>
+      <td>39</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>167</td>
+      <td>108</td>
+      <td>43</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>177</td>
+      <td>119</td>
+      <td>44</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>175</td>
+      <td>71</td>
+      <td>43</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>181</td>
+      <td>114</td>
+      <td>37</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>183</td>
+      <td>93</td>
+      <td>38</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>171</td>
+      <td>71</td>
+      <td>45</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>178</td>
+      <td>116</td>
+      <td>42</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>176</td>
+      <td>107</td>
+      <td>41</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>169</td>
+      <td>88</td>
+      <td>41</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>160</td>
+      <td>101</td>
+      <td>37</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>172</td>
+      <td>76</td>
+      <td>43</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>181</td>
+      <td>87</td>
+      <td>39</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>164</td>
+      <td>75</td>
+      <td>44</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>171</td>
+      <td>115</td>
+      <td>41</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>181</td>
+      <td>107</td>
+      <td>44</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>176</td>
+      <td>100</td>
+      <td>45</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>167</td>
+      <td>81</td>
+      <td>37</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>163</td>
+      <td>116</td>
+      <td>43</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>176</td>
+      <td>96</td>
+      <td>45</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>179</td>
+      <td>114</td>
+      <td>36</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>180</td>
+      <td>72</td>
+      <td>45</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>176</td>
+      <td>78</td>
+      <td>42</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>178</td>
+      <td>86</td>
+      <td>44</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>168</td>
+      <td>107</td>
+      <td>45</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>179</td>
+      <td>121</td>
+      <td>45</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>166</td>
+      <td>96</td>
+      <td>43</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>161</td>
+      <td>88</td>
+      <td>43</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>176</td>
+      <td>98</td>
+      <td>36</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>176</td>
+      <td>115</td>
+      <td>38</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>178</td>
+      <td>114</td>
+      <td>38</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>178</td>
+      <td>124</td>
+      <td>41</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>173</td>
+      <td>103</td>
+      <td>36</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>180</td>
+      <td>124</td>
+      <td>36</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>167</td>
+      <td>100</td>
+      <td>40</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>168</td>
+      <td>97</td>
+      <td>39</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>160</td>
+      <td>108</td>
+      <td>36</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>170</td>
+      <td>119</td>
+      <td>43</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>162</td>
+      <td>86</td>
+      <td>37</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>178</td>
+      <td>95</td>
+      <td>45</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>171</td>
+      <td>104</td>
+      <td>44</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>170</td>
+      <td>96</td>
+      <td>38</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>185</td>
+      <td>98</td>
+      <td>37</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>163</td>
+      <td>93</td>
+      <td>39</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>178</td>
+      <td>86</td>
+      <td>39</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>168</td>
+      <td>71</td>
+      <td>36</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>166</td>
+      <td>114</td>
+      <td>38</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>179</td>
+      <td>76</td>
+      <td>43</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>171</td>
+      <td>124</td>
+      <td>43</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>178</td>
+      <td>71</td>
+      <td>42</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>174</td>
+      <td>104</td>
+      <td>43</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>162</td>
+      <td>92</td>
+      <td>41</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>165</td>
+      <td>89</td>
+      <td>39</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>163</td>
+      <td>82</td>
+      <td>42</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>170</td>
+      <td>88</td>
+      <td>42</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 4 columns</p>
+</div>
+
+<pre><code class="python">from IPython.display import HTML, display
+import tabulate
+table=[
+        [&quot;method&quot;]+[x for x in df.columns],
+        [&quot;describe()&quot;]+['&lt;pre&gt;'+str(df[col].describe())+'&lt;/pre&gt;' for col in df.columns],
+        [&quot;count()&quot;]+[df[col].count() for col in df.columns],
+        [&quot;mean()&quot;]+[df[col].mean() for col in df.columns],
+        [&quot;std()&quot;]+[&quot;{:.2f}&quot;.format(df[col].std()) for col in df.columns],
+        [&quot;min()&quot;]+[df[col].min() for col in df.columns],
+        [&quot;max()&quot;]+[df[col].max() for col in df.columns],
+        [&quot;q1()&quot;]+[df[col].quantile(0.25) for col in df.columns],
+        [&quot;q2()&quot;]+[df[col].quantile(0.50) for col in df.columns],
+        [&quot;q3()&quot;]+[df[col].quantile(0.75) for col in df.columns],
+        [&quot;skew()&quot;]+[&quot;{:.2f}&quot;.format(df[col].skew()) for col in df.columns],
+     ]
+
+display(HTML(tabulate.tabulate(table, tablefmt='html')))
+</code></pre>
+
+<table>
+<tbody>
+<tr><td>method    </td><td>Tinggi (cm)</td><td>Berat Badan (kg)</td><td>Panjang Kaki (size)</td><td>Umur (tahun)</td></tr>
+<tr><td>describe()</td><td><pre>count    100.000000
+mean     172.040000
+std        7.315295
+min      160.000000
+25%      165.000000
+50%      172.000000
+75%      178.000000
+max      185.000000
+Name: Tinggi (cm), dtype: float64</pre>            </td><td><pre>count    100.000000
+mean      96.960000
+std       15.966455
+min       71.000000
+25%       83.750000
+50%       97.000000
+75%      109.000000
+max      124.000000
+Name: Berat Badan (kg), dtype: float64</pre>                 </td><td><pre>count    100.000000
+mean      40.790000
+std        2.857897
+min       36.000000
+25%       38.000000
+50%       41.000000
+75%       43.000000
+max       45.000000
+Name: Panjang Kaki (size), dtype: float64</pre>                    </td><td><pre>count    100.000000
+mean      19.860000
+std        1.325888
+min       18.000000
+25%       19.000000
+50%       20.000000
+75%       21.000000
+max       22.000000
+Name: Umur (tahun), dtype: float64</pre>             </td></tr>
+<tr><td>count()   </td><td>100        </td><td>100             </td><td>100                </td><td>100         </td></tr>
+<tr><td>mean()    </td><td>172.04     </td><td>96.96           </td><td>40.79              </td><td>19.86       </td></tr>
+<tr><td>std()     </td><td>7.32       </td><td>15.97           </td><td>2.86               </td><td>1.33        </td></tr>
+<tr><td>min()     </td><td>160        </td><td>71              </td><td>36                 </td><td>18          </td></tr>
+<tr><td>max()     </td><td>185        </td><td>124             </td><td>45                 </td><td>22          </td></tr>
+<tr><td>q1()      </td><td>165.0      </td><td>83.75           </td><td>38.0               </td><td>19.0        </td></tr>
+<tr><td>q2()      </td><td>172.0      </td><td>97.0            </td><td>41.0               </td><td>20.0        </td></tr>
+<tr><td>q3()      </td><td>178.0      </td><td>109.0           </td><td>43.0               </td><td>21.0        </td></tr>
+<tr><td>skew()    </td><td>-0.02      </td><td>-0.03           </td><td>-0.25              </td><td>-0.11       </td></tr>
+</tbody>
+</table>
+
+<p>Mean : Mean atau yang bisa disebut rata rata adalah jumlah data dibagi dengan banyaknya data</p>
+<p>Modus: Data yang paling banyak keluar/menonjol dari kumpulan data</p>
+<p>Median : Nilai tengah dari banyaknya data</p>
+<p>Quartil : Membagi data menjadi sama banyak yang dibatasi oleh suatu nilai </p>
+<ul>
+<li>Kuartil bawah (<strong>Q1</strong>)</li>
+<li>Kuartil tengah (<strong>Q2</strong>)</li>
+<li>Kuartil atas (<strong>Q3</strong>)</li>
+</ul>
+<p>Skewness : Suatu ketidakseimbangan dan asimetris mean dari distribusi data, jika data itu normal maka saat didistribusikan menggunakan bell curve,maka kurvanya akan simetris</p>
+<pre><code class="python">
+</code></pre>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../jarak-data/" title="Menghitung Jarak antar Data tipe Numerik" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Menghitung Jarak antar Data tipe Numerik
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c648116f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
