@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
         
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Daud Kresna</title>
-        <link href="css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Menghitung Jarak antar Data tipe Numerik - Daud Kresna</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -19,15 +19,15 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
@@ -41,18 +41,18 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href=".">Daud Kresna</a>
+                    <a class="navbar-brand" href="..">Daud Kresna</a>
                 </div>
 
                 <!-- Expanded navigation -->
                 <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a href=".">Home</a>
-                            </li>
                             <li >
-                                <a href="jarak-data/">Menghitung Jarak antar Data tipe Numerik</a>
+                                <a href="..">Home</a>
+                            </li>
+                            <li class="active">
+                                <a href="./">Menghitung Jarak antar Data tipe Numerik</a>
                             </li>
                         </ul>
 
@@ -62,18 +62,18 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="disabled">
-                                <a rel="next" >
+                            <li >
+                                <a rel="next" href="..">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="jarak-data/">
+                            <li class="disabled">
+                                <a rel="prev" >
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/daudkresna/daudkresna.github.io/edit/master/docs/index.md">Edit on Github</a>
+                                <a href="https://github.com/daudkresna/daudkresna.github.io/edit/master/docs/jarak-data.md">Edit on Github</a>
                             </li>
                     </ul>
                 </div>
@@ -83,28 +83,84 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#welcome-to-mkdocs">Welcome to MkDocs</a></li>
-            <li><a href="#commands">Commands</a></li>
-            <li><a href="#project-layout">Project layout</a></li>
+        <li class="main active"><a href="#menghitung-jarak-antar-data-tipe-numerik">Menghitung Jarak antar Data tipe Numerik</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs help</code> - Print this help message.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+<h2 id="menghitung-jarak-antar-data-tipe-numerik">Menghitung Jarak antar Data tipe Numerik</h2>
+<p><hr></hr></p>
+<ol>
+<li><i>Minkowski Distance</i></li>
+</ol>
+<p>Minkowski Distance termasuk <i>Euclidean Distance</i> dan <i>Manhattan Distance</i>, perhitungan jarak dimana nilai m adalah bilangan asli positif dan xi dan yi adalah 2 vector dalam dimensi n</p>
+<p>Rumus untuk <i>Minkowski Distance</i> adalah:
+   $$
+   d_{min}=(\sum_{i=1}^n|x_{i}-y_{i}|^m)^\frac{1}{m},m\ge1
+   $$</p>
+<p><hr></hr></p>
+<ol>
+<li><i>Manhattan Distance</i></li>
+</ol>
+<p><i>Manhattan Distance</i> agak berbeda daripada <i>Minkowski Distance</i> dimana nilai m=1 sama halnya dengan <i>Minkowski Distance</i> yang sensitif terhadap oulier</p>
+<p>Rumus untuk <i>Manhattan Distance</i>  adalah:</p>
+<p>$$
+   d_{man}=\sum_{i=1}^{n}|x_{i}-y_{i}|
+   $$</p>
+<p><hr></hr></p>
+<ol>
+<li><i>Euclidean Distance</i></li>
+</ol>
+<p><i>Euclidean Distance</i> adalah perhitungan yang paling terkenal/banyak diketahui digunakan untuk data numerik. Ini berbeda daripada <i>Minkowski Distance</i> dimana nilai m = 2. <i>Euclidean Distance</i> berjalan baik disaat digunakan untuk datasets compact atau isolated clusters. Namun dia memiliki kelemahan yaitu jika dua vektor data tidak mempunyai atribut yang sama, mereka akan memiliki jarak yang lebih kecil dibandingan dengan pasangan data vektor yang mempuna nilai atribut yang sama</p>
+<p><hr></hr></p>
+<ol>
+<li><i>Average Distance</i></li>
+</ol>
+<p>Mengenai kelemahan daripada <i>Euclidean Distance</i>, <i>Average Distance</i> adalah modifikasi daripada <i>Euclidean Distance</i> untuk memperbaiki hasil. untuk dua data x,y dalam dimensi-n, rumusnya adalah:
+   $$
+   d_{ave}=\left(\frac{1}{n}\sum_{i=1}^{n}(x_{i}-y_{i})^2\right)^\frac{1}{2}
+   $$</p>
+<p><hr></hr></p>
+<ol>
+<li><i>Weighted Euclidean Distance</i></li>
+</ol>
+<p>Jika kedudukan masing masing atribut tersedia, <i>Weighted Euclidean Distance</i> adalah modifikasi dari <i>Euclidean Distance</i>. Jarak ini mempunyai rumus:</p>
+<p>$$
+   d_{we}=\left(\sum_{i=1}^n w_{i}(x_{i}-y_{i}\right)^2)^\frac{1}{2}
+   $$
+   Dimana w adalah berat yang diberikan kepada komponen ke-i</p>
+<p><hr></hr></p>
+<ol>
+<li><i>Chord Distance</i></li>
+</ol>
+<p><i>Chord Distance</i> adalah hasil modifikasi lainnya dari <i>Euclidean Distance</i> untuk mengatasi kelemahan <i>Euclidean Distance</i> lainnya. jarak ini juga bisa digunakan untuk memecahkan masalah yang disebabkan skala pengukuran juga. Jarak ini bisa di kalkulasikan dari non-normalized data. rumus jarak ini adalah:
+   $$
+   d_{chord}=\left(2-2 \frac{{\sum_{i=1}^n}x_{i}y_{i}}{||x||<em>{2}||y||</em>{2}}\right)^\frac{1}{2}
+   $$</p>
+<p><hr></hr></p>
+<ol>
+<li><i>Mahalanobis Distance</i></li>
+</ol>
+<p><i>Mahalobis Distance</i> adalah perbedaan ke Euclidean dan Manhattan distance yaitu jarak ini terbebas dari hubungan data yang mana dua data berasal</p>
+<p>$$
+   d_{mah}=\sqrt{(x-y)S^{-1}(x-y)^{T}}
+   $$</p>
+<ol>
+<li><i>Cosine Measure</i></li>
+</ol>
+<p>Persammaan Cosine kebanyakan digunakan untuk mencari kemiripan dokumen dan rumusnya adalah:
+   $$
+   Cosine(x,y)=\frac{\sum_{i=1}^{n}x_{i}{y_{i}}}{||x||2||y||2}
+   $$</p>
+<ol>
+<li><i>Pearson Correlation</i></li>
+</ol>
+<p><i>Pearson Correlation</i> Digunakan dalam clustering ekspresi data. Ukuran kemiripan menghitung kemiripan antara bentuk dari dua pola ekspresi. Rumusnya adalah:
+   $$
+   Pearson(x,y)=\frac{\sum_{i=1}^n(x_{i}-\mu_{x})(y_{i}-\mu_{y})}{\sqrt{\sum_{i=1}^n(x_{i}-y_{i})^2}\sqrt{\sum_{i=1}^n(x_{i}-y_{i})^2}}
+   $$</p>
+<p>Dimana mu x dan mu y dimaksudkan untuk x dan y. Jarak ini juga memiliki kelemahan yaitu sensitif terhadap outliers </p>
+<p><hr></hr></p></div>
         </div>
 
         <footer class="col-md-12">
@@ -112,11 +168,12 @@ docs/
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = ".",
+            var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js" defer></script>
-        <script src="search/main.js" defer></script>
+        <script src="../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+        <script src="../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
@@ -184,8 +241,3 @@ docs/
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.0.4
-Build Date UTC : 2019-09-11 14:59:39
--->
