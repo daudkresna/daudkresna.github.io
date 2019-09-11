@@ -93,9 +93,9 @@
 1. <i>Minkowski Distance</i></p>
 <p>Minkowski Distance termasuk <i>Euclidean Distance</i> dan <i>Manhattan Distance</i>, perhitungan jarak dimana nilai m adalah bilangan asli positif dan xi dan yi adalah 2 vector dalam dimensi n</p>
 <p>Rumus untuk <i>Minkowski Distance</i> adalah:
-   $$
+$$
    d_{min}=(\sum_{i=1}^n|x_{i}-y_{i}|^m)^\frac{1}{m},m\ge1
-   $$</p>
+$$</p>
 <ol>
 <li><i>Manhattan Distance</i></li>
 </ol>
@@ -126,31 +126,34 @@
 <ol>
 <li><i>Chord Distance</i></li>
 </ol>
-<p><i>Chord Distance</i> adalah hasil modifikasi lainnya dari <i>Euclidean Distance</i> untuk mengatasi kelemahan <i>Euclidean Distance</i> lainnya. jarak ini juga bisa digunakan untuk memecahkan masalah yang disebabkan skala pengukuran juga. Jarak ini bisa di kalkulasikan dari non-normalized data. rumus jarak ini adalah:</p>
-<p>$$
+<p><i>Chord Distance</i> adalah hasil modifikasi lainnya dari <i>Euclidean Distance</i> untuk mengatasi kelemahan <i>Euclidean Distance</i> lainnya. jarak ini juga bisa digunakan untuk memecahkan masalah yang disebabkan skala pengukuran juga. Jarak ini bisa di kalkulasikan dari non-normalized data. rumus jarak ini adalah:
+   $$
    d_{chord}=\left(2-2 \frac{{\sum_{i=1}^n}x_{i}y_{i}}{||x||<em>{2}||y||</em>{2}}\right)^\frac{1}{2}
    $$</p>
-<ol>
-<li><i>Mahalanobis Distance</i></li>
-</ol>
+<p>7.<i>Mahalanobis Distance</i></p>
 <p><i>Mahalobis Distance</i> adalah perbedaan ke Euclidean dan Manhattan distance yaitu jarak ini terbebas dari hubungan data yang mana dua data berasal</p>
-<p>$$
+<div>
+<div class="MathJax_Preview">
    d_{mah}=\sqrt{(x-y)S^{-1}(x-y)^{T}}
-   $$</p>
-<ol>
-<li><i>Cosine Measure</i></li>
-</ol>
+</div>
+<script type="math/tex; mode=display">
+   d_{mah}=\sqrt{(x-y)S^{-1}(x-y)^{T}}
+</script>
+</div>
+<hr>
+
+<p>8.<i>Cosine Measure</i></p>
 <p>Persammaan Cosine kebanyakan digunakan untuk mencari kemiripan dokumen dan rumusnya adalah:
-   $$
+$$
    Cosine(x,y)=\frac{\sum_{i=1}^{n}x_{i}{y_{i}}}{||x||2||y||2}
-   $$</p>
-<ol>
-<li><i>Pearson Correlation</i></li>
-</ol>
+$$</p>
+<hr>
+
+<p>9.<i>Pearson Correlation</i></p>
 <p><i>Pearson Correlation</i> Digunakan dalam clustering ekspresi data. Ukuran kemiripan menghitung kemiripan antara bentuk dari dua pola ekspresi. Rumusnya adalah:
-   $$
+$$
    Pearson(x,y)=\frac{\sum_{i=1}^n(x_{i}-\mu_{x})(y_{i}-\mu_{y})}{\sqrt{\sum_{i=1}^n(x_{i}-y_{i})^2}\sqrt{\sum_{i=1}^n(x_{i}-y_{i})^2}}
-   $$</p>
+$$</p>
 <p>Dimana mu x dan mu y dimaksudkan untuk x dan y. Jarak ini juga memiliki kelemahan yaitu sensitif terhadap outliers </p>
 <hr></div>
         </div>
