@@ -265,6 +265,68 @@
     Menghitung Jarak antar Data tipe Numerik
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manhattan-distance" class="md-nav__link">
+    Manhattan Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#euclidean-distance" class="md-nav__link">
+    Euclidean Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#average-distance" class="md-nav__link">
+    Average Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weighted-euclidean-distance" class="md-nav__link">
+    Weighted Euclidean Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chord-distance" class="md-nav__link">
+    Chord Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mahalanobis-distance" class="md-nav__link">
+    Mahalanobis Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosine-measure" class="md-nav__link">
+    Cosine Measure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pearson-correlation" class="md-nav__link">
+    Pearson Correlation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -301,6 +363,68 @@
     Menghitung Jarak antar Data tipe Numerik
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manhattan-distance" class="md-nav__link">
+    Manhattan Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#euclidean-distance" class="md-nav__link">
+    Euclidean Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#average-distance" class="md-nav__link">
+    Average Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weighted-euclidean-distance" class="md-nav__link">
+    Weighted Euclidean Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chord-distance" class="md-nav__link">
+    Chord Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mahalanobis-distance" class="md-nav__link">
+    Mahalanobis Distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosine-measure" class="md-nav__link">
+    Cosine Measure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pearson-correlation" class="md-nav__link">
+    Pearson Correlation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -326,14 +450,16 @@
                 
                 <h2 id="menghitung-jarak-antar-data-tipe-numerik">Menghitung Jarak antar Data tipe Numerik</h2>
 <p><hr>
-- <i>Minkowski Distance</i></p>
+- #### <i>Minkowski Distance</i></p>
 <p>Minkowski Distance termasuk <i>Euclidean Distance</i> dan <i>Manhattan Distance</i>, perhitungan jarak dimana nilai m adalah bilangan asli positif dan xi dan yi adalah 2 vector dalam dimensi n</p>
 <p>Rumus untuk <i>Minkowski Distance</i> adalah:
 $$
 d_{min}=(\sum_{i=1}^n|x_{i}-y_{i}|^m)^\frac{1}{m},m\ge1
 $$</p>
 <ul>
-<li><i>Manhattan Distance</i></li>
+<li>
+<h4 id="manhattan-distance"><i>Manhattan Distance</i></h4>
+</li>
 </ul>
 <p><i>Manhattan Distance</i> agak berbeda daripada <i>Minkowski Distance</i> dimana nilai m=1 sama halnya dengan <i>Minkowski Distance</i> yang sensitif terhadap oulier</p>
 <p>Rumus untuk <i>Manhattan Distance</i>  adalah:</p>
@@ -346,18 +472,24 @@ d_{man}=\sum_{i=1}^{n}|x_{i}-y_{i}|
 </script>
 </div>
 <ul>
-<li><i>Euclidean Distance</i></li>
+<li>
+<h4 id="euclidean-distance"><i>Euclidean Distance</i></h4>
+</li>
 </ul>
 <p><i>Euclidean Distance</i> adalah perhitungan yang paling terkenal/banyak diketahui digunakan untuk data numerik. Ini berbeda daripada <i>Minkowski Distance</i> dimana nilai m = 2. <i>Euclidean Distance</i> berjalan baik disaat digunakan untuk datasets compact atau isolated clusters. Namun dia memiliki kelemahan yaitu jika dua vektor data tidak mempunyai atribut yang sama, mereka akan memiliki jarak yang lebih kecil dibandingan dengan pasangan data vektor yang mempuna nilai atribut yang sama</p>
 <ul>
-<li><i>Average Distance</i></li>
+<li>
+<h4 id="average-distance"><i>Average Distance</i></h4>
+</li>
 </ul>
 <p>Mengenai kelemahan daripada <i>Euclidean Distance</i>, <i>Average Distance</i> adalah modifikasi daripada <i>Euclidean Distance</i> untuk memperbaiki hasil. untuk dua data x,y dalam dimensi-n, rumusnya adalah:
 $$
 d_{ave}=\left(\frac{1}{n}\sum_{i=1}^{n}(x_{i}-y_{i})^2\right)^\frac{1}{2}
 $$</p>
 <ul>
-<li><i>Weighted Euclidean Distance</i></li>
+<li>
+<h4 id="weighted-euclidean-distance"><i>Weighted Euclidean Distance</i></h4>
+</li>
 </ul>
 <p>Jika kedudukan masing masing atribut tersedia, <i>Weighted Euclidean Distance</i> adalah modifikasi dari <i>Euclidean Distance</i>. Jarak ini mempunyai rumus:</p>
 <p>$$
@@ -365,14 +497,18 @@ d_{we}=\left(\sum_{i=1}^n w_{i}(x_{i}-y_{i}\right)^2)^\frac{1}{2}
 $$
 Dimana w adalah berat yang diberikan kepada komponen ke-i</p>
 <ul>
-<li><i>Chord Distance</i></li>
+<li>
+<h4 id="chord-distance"><i>Chord Distance</i></h4>
+</li>
 </ul>
 <p><i>Chord Distance</i> adalah hasil modifikasi lainnya dari <i>Euclidean Distance</i> untuk mengatasi kelemahan <i>Euclidean Distance</i> lainnya. jarak ini juga bisa digunakan untuk memecahkan masalah yang disebabkan skala pengukuran juga. Jarak ini bisa di kalkulasikan dari non-normalized data. rumus jarak ini adalah:
 $$
 d_{chord}=\left(2-2 \frac{{\sum_{i=1}^n}x_{i}y_{i}}{||x||{2}||y||{2}}\right)^\frac{1}{2}
 $$</p>
 <ul>
-<li>Mahalanobis Distance</i></li>
+<li>
+<h4 id="mahalanobis-distance">Mahalanobis Distance</i></h4>
+</li>
 </ul>
 <p><i>Mahalobis Distance</i> adalah perbedaan ke Euclidean dan Manhattan distance yaitu jarak ini terbebas dari hubungan data yang mana dua data berasal</p>
 <div>
@@ -384,14 +520,18 @@ $$</p>
 </script>
 </div>
 <ul>
-<li><i>Cosine Measure</i></li>
+<li>
+<h4 id="cosine-measure"><i>Cosine Measure</i></h4>
+</li>
 </ul>
 <p>Persammaan Cosine kebanyakan digunakan untuk mencari kemiripan dokumen dan rumusnya adalah:
 $$
    Cosine(x,y)=\frac{\sum_{i=1}^{n}x_{i}{y_{i}}}{||x||2||y||2}
 $$</p>
 <ul>
-<li><i>Pearson Correlation</i></li>
+<li>
+<h4 id="pearson-correlation"><i>Pearson Correlation</i></h4>
+</li>
 </ul>
 <p><i>Pearson Correlation</i> Digunakan dalam clustering ekspresi data. Ukuran kemiripan menghitung kemiripan antara bentuk dari dua pola ekspresi. Rumusnya adalah:
 $$
