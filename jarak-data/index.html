@@ -327,6 +327,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#referensi" class="md-nav__link">
+    Referensi
+  </a>
+  
+</li>
+      
       
       
       
@@ -421,6 +428,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#referensi" class="md-nav__link">
+    Referensi
+  </a>
+  
+</li>
+      
       
       
       
@@ -494,6 +508,188 @@ $$
    Pearson(x,y)=\frac{\sum_{i=1}^n(x_{i}-\mu_{x})(y_{i}-\mu_{y})}{\sqrt{\sum_{i=1}^n(x_{i}-y_{i})^2}\sqrt{\sum_{i=1}^n(x_{i}-y_{i})^2}}
 $$</p>
 <p>Dimana mu x dan mu y dimaksudkan untuk x dan y. Jarak ini juga memiliki kelemahan yaitu sensitif terhadap outliers </p>
+<p>Contoh Program menghitung jarak data dari data di internet:</p>
+<pre><code class="python">import pandas as pd
+df = pd.read_csv(&quot;tae.csv&quot;,nrows=4)
+df
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>English</th>
+      <th>Instructor</th>
+      <th>Course</th>
+      <th>Summer or Regular</th>
+      <th>Class Size</th>
+      <th>Class Attribut</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>23</td>
+      <td>3</td>
+      <td>1</td>
+      <td>19</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>15</td>
+      <td>3</td>
+      <td>1</td>
+      <td>17</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>23</td>
+      <td>3</td>
+      <td>2</td>
+      <td>49</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>5</td>
+      <td>2</td>
+      <td>2</td>
+      <td>33</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="python">binary=[0,3]
+num=[1,2,4,5]
+</code></pre>
+
+<pre><code class="python">from IPython.display import HTML, display
+import tabulate
+table=[
+    [&quot;Data&quot;]+[&quot;Jarak&quot;]+[&quot;Numeric&quot;]+[&quot;Binary&quot;],
+    [&quot;v1-v2&quot;]+[0]+[0]+[0],
+    [&quot;v1-v3&quot;]+[0]+[0]+[0],
+    [&quot;v2-v3&quot;]+[0]+[0]+[0],
+    [&quot;v3-v4&quot;]+[0]+[0]+[0],
+    ]
+
+display(HTML(tabulate.tabulate(table, tablefmt='html')))
+</code></pre>
+
+<table>
+<tbody>
+<tr><td>Data </td><td>Jarak</td><td>Numeric</td><td>Binary</td></tr>
+<tr><td>v1-v2</td><td>0    </td><td>0      </td><td>0     </td></tr>
+<tr><td>v1-v3</td><td>0    </td><td>0      </td><td>0     </td></tr>
+<tr><td>v2-v3</td><td>0    </td><td>0      </td><td>0     </td></tr>
+<tr><td>v3-v4</td><td>0    </td><td>0      </td><td>0     </td></tr>
+</tbody>
+</table>
+
+<pre><code class="python">def chordDist(v1,v2,jnis):
+    jmlh=0
+    normv1=0
+    normv2=0
+    for x in range (len(jnis)):
+        normv1=normv1+(int(df.values.tolist()[v1][jnis[x]])**2)
+        normv2=normv2+(int(df.values.tolist()[v2][jnis[x]])**2)
+        jmlh=jmlh+(int(df.values.tolist()[v1][jnis[x]])*int(df.values.tolist()[v2][jnis[x]]))
+    return ((2-(2*jmlh/(normv1*normv2)))**0.5)
+</code></pre>
+
+<pre><code class="python">from IPython.display import HTML, display
+import tabulate
+table=[
+    [&quot;Data&quot;]+[&quot;Jarak&quot;]+[&quot;Numeric&quot;]+[&quot;Binary&quot;],
+    [&quot;v1-v2&quot;]+[0]+[chordDist(0,1,num)]+[0],
+    [&quot;v1-v3&quot;]+[0]+[chordDist(0,2,num)]+[0],
+    [&quot;v2-v3&quot;]+[0]+[chordDist(1,2,num)]+[0],
+    [&quot;v3-v4&quot;]+[0]+[chordDist(2,3,num)]+[0],
+    ]
+
+display(HTML(tabulate.tabulate(table, tablefmt='html')))
+</code></pre>
+
+<table>
+<tbody>
+<tr><td>Data </td><td>Jarak</td><td>Numeric           </td><td>Binary</td></tr>
+<tr><td>v1-v2</td><td>0    </td><td>1.4132090254432463</td><td>0     </td></tr>
+<tr><td>v1-v3</td><td>0    </td><td>1.4138230758312995</td><td>0     </td></tr>
+<tr><td>v2-v3</td><td>0    </td><td>1.4136742257751354</td><td>0     </td></tr>
+<tr><td>v3-v4</td><td>0    </td><td>1.413841698820558 </td><td>0     </td></tr>
+</tbody>
+</table>
+
+<p>BINARY</p>
+<pre><code class="python">def binaryDist(v1,v2,jnis):
+    q=0
+    r=0
+    s=0
+    t=0
+    for x in range (len(jnis)):
+        if (int(df.values.tolist()[v1][jnis[x]]))==1 and (int(df.values.tolist()[v2][jnis[x]]))==1:
+            q=q+1
+        elif (int(df.values.tolist()[v1][jnis[x]]))==1 and (int(df.values.tolist()[v2][jnis[x]]))==2:
+            r=r+1
+        elif (int(df.values.tolist()[v1][jnis[x]]))==2 and (int(df.values.tolist()[v2][jnis[x]]))==1:
+            s=s+1
+        else:
+            t=t+1
+    return ((r+s)/(q+r+s+t))
+</code></pre>
+
+<pre><code class="python">from IPython.display import HTML, display
+import tabulate
+table=[
+    [&quot;Data&quot;]+[&quot;Jarak&quot;]+[&quot;Numeric&quot;]+[&quot;Binary&quot;],
+    [&quot;v1-v2&quot;]+[0]+[chordDist(0,1,num)]+[binaryDist(0,1,binary)],
+    [&quot;v1-v3&quot;]+[0]+[chordDist(0,2,num)]+[binaryDist(0,2,binary)],
+    [&quot;v2-v3&quot;]+[0]+[chordDist(1,2,num)]+[binaryDist(1,2,binary)],
+    [&quot;v3-v4&quot;]+[0]+[chordDist(2,3,num)]+[binaryDist(2,3,binary)],
+    ]
+
+display(HTML(tabulate.tabulate(table, tablefmt='html')))
+</code></pre>
+
+<table>
+<tbody>
+<tr><td>Data </td><td>Jarak</td><td>Numeric           </td><td>Binary</td></tr>
+<tr><td>v1-v2</td><td>0    </td><td>1.4132090254432463</td><td>0.5   </td></tr>
+<tr><td>v1-v3</td><td>0    </td><td>1.4138230758312995</td><td>0.5   </td></tr>
+<tr><td>v2-v3</td><td>0    </td><td>1.4136742257751354</td><td>1.0   </td></tr>
+<tr><td>v3-v4</td><td>0    </td><td>1.413841698820558 </td><td>0.0   </td></tr>
+</tbody>
+</table>
+
+<h3 id="referensi">Referensi<a class="headerlink" href="#referensi" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ol>
+<li>https://www.researchgate.net/publication/286637899_A_Comparison_Study_on_Similarity_and_Dissimilarity_Measures_in_Clustering_Continuous_Data</li>
+<li>mulaab.github.io/datamining/memahami-data/</li>
+</ol>
+</blockquote>
 <hr>
                 
                   
