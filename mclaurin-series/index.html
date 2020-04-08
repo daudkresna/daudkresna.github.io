@@ -419,6 +419,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../richardson-extrapolation/" title="Richardson Extrapolation" class="md-nav__link">
+      Richardson Extrapolation
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -479,7 +491,7 @@ f(x)=e^{2x}
 $$
 maka turunannya adalah:
 $$
-\frac{f^1(x)}{n!}=\frac{2e^{2x}}{1!}
+\frac{f<sup>1(x)}{n!}=\frac{2e</sup>{2x}}{1!}
 $$</p>
 <div>
 <div class="MathJax_Preview">
@@ -509,40 +521,40 @@ $$</p>
 </div>
 <p>maka deret ekspansinya adalah:
 $$
-\displaystyle\sum_{n=0}^{\infty}\frac{2^nx^n}{n!}
+\displaystyle\sum_{n=0}<sup>{\infty}\frac{2</sup>nx^n}{n!}
 $$</p>
 <h4 id="listing-program">Listing Program<a class="headerlink" href="#listing-program" title="Permanent link">&para;</a></h4>
 <p>Lakukan ekspansi dari kasus diatas sampai error lebih kecil daripada 0,0001</p>
-<pre><code class="python">def faktorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * faktorial(n-1)
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">faktorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">faktorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
-k=1
-x=4
-counter=0
-putaran=1
-def mclaurin(k,x,counter,hasil,putaran):
-    end=False
-    while end==False:
-        k=k*2
-        print(k,'(e^(2x)')
-        hasil+=(k*(x**counter))/faktorial(counter)
-        residu=hasil+(k*2)*(x**counter+1)/faktorial(counter+1)
-        error=residu-hasil
-        print('error putaran ke',putaran,' adalah',error)
-        if error&lt;=0.001:
-            print('error adalah =',error)
-            print(&quot;berhenti pada putaran ke =&quot;,putaran)
-            break
-        else:
-            counter+=1
-            putaran+=1
+<span class="n">k</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">x</span><span class="o">=</span><span class="mi">4</span>
+<span class="n">counter</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">putaran</span><span class="o">=</span><span class="mi">1</span>
+<span class="k">def</span> <span class="nf">mclaurin</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">counter</span><span class="p">,</span><span class="n">hasil</span><span class="p">,</span><span class="n">putaran</span><span class="p">):</span>
+    <span class="n">end</span><span class="o">=</span><span class="bp">False</span>
+    <span class="k">while</span> <span class="n">end</span><span class="o">==</span><span class="bp">False</span><span class="p">:</span>
+        <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">*</span><span class="mi">2</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="s1">&#39;(e^(2x)&#39;</span><span class="p">)</span>
+        <span class="n">hasil</span><span class="o">+=</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">counter</span><span class="p">))</span><span class="o">/</span><span class="n">faktorial</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+        <span class="n">residu</span><span class="o">=</span><span class="n">hasil</span><span class="o">+</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">counter</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">faktorial</span><span class="p">(</span><span class="n">counter</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">error</span><span class="o">=</span><span class="n">residu</span><span class="o">-</span><span class="n">hasil</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;error putaran ke&#39;</span><span class="p">,</span><span class="n">putaran</span><span class="p">,</span><span class="s1">&#39; adalah&#39;</span><span class="p">,</span><span class="n">error</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">error</span><span class="o">&lt;=</span><span class="mf">0.001</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;error adalah =&#39;</span><span class="p">,</span><span class="n">error</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;berhenti pada putaran ke =&quot;</span><span class="p">,</span><span class="n">putaran</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">counter</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="n">putaran</span><span class="o">+=</span><span class="mi">1</span>
 
-print('Menghitung Deret McLaurin 2e^(2x)\nSampai error lebih kecil daripada 0,0001===========================================')
-mclaurin(k,x,counter,0,1)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Menghitung Deret McLaurin 2e^(2x)</span><span class="se">\n</span><span class="s1">Sampai error lebih kecil daripada 0,0001===========================================&#39;</span><span class="p">)</span>
+<span class="n">mclaurin</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">counter</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
 
 <pre><code>Menghitung Deret McLaurin 2e^(2x)
 Sampai error lebih kecil daripada 0,0001===========================================

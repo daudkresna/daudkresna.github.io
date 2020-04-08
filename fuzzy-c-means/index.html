@@ -461,6 +461,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../richardson-extrapolation/" title="Richardson Extrapolation" class="md-nav__link">
+      Richardson Extrapolation
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -558,26 +570,24 @@
 sehingga digunakan algoritma Fuzzy untuk menghitung skor dari sebuah data.</p>
 <p>Contoh Penggunaan FCM pada data:</p>
 <h3 id="1-persiapkan-environment">1. Persiapkan Environment<a class="headerlink" href="#1-persiapkan-environment" title="Permanent link">&para;</a></h3>
-<pre><code class="python">import pandas as pd
-from pandas import DataFrame
-import random
-import numpy as np
-from IPython.display import HTML, display
-from tabulate import tabulate
-from math import log
-from sklearn.feature_selection import mutual_info_classif
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">mutual_info_classif</span>
 
-def table(df): display(HTML(tabulate(df, tablefmt='html', headers='keys', showindex=False)))
+<span class="k">def</span> <span class="nf">table</span><span class="p">(</span><span class="n">df</span><span class="p">):</span> <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;html&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="n">showindex</span><span class="o">=</span><span class="bp">False</span><span class="p">)))</span>
+</pre></div>
 
-</code></pre>
-
-<pre><code class="python">Data = pd.read_csv('data1.csv', sep=',')
-Data = Data[['O-Ring','Thermal', 'Temperature', 'Leak', 'Temporal']].sample(6, random_state=42)
-D = Data.values
-print(&quot;Table (D) &gt;&gt;&quot;)
-table(D)
-
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">Data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data1.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="n">Data</span> <span class="o">=</span> <span class="n">Data</span><span class="p">[[</span><span class="s1">&#39;O-Ring&#39;</span><span class="p">,</span><span class="s1">&#39;Thermal&#39;</span><span class="p">,</span> <span class="s1">&#39;Temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;Leak&#39;</span><span class="p">,</span> <span class="s1">&#39;Temporal&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">Data</span><span class="o">.</span><span class="n">values</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Table (D) &gt;&gt;&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+</pre></div>
 
 <pre><code>Table (D) &gt;&gt;
 </code></pre>
@@ -595,11 +605,10 @@ table(D)
 </tbody>
 </table>
 
-<pre><code class="python">n, m, c, w, T, e, P0, t = *D.shape, 3, 2, 10, 0.1, 0, 1
-print(&quot;Variables &gt;&gt;&quot;)
-print(&quot; n = %d\n m = %d\n c = %d\n w = %d\n T = %d\n e = %f\n P0 = %d\n t = %d&quot; % (n, m, c, w, T, e, P0, t))
-
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">P0</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="o">*</span><span class="n">D</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Variables &gt;&gt;&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot; n = </span><span class="si">%d</span><span class="se">\n</span><span class="s2"> m = </span><span class="si">%d</span><span class="se">\n</span><span class="s2"> c = </span><span class="si">%d</span><span class="se">\n</span><span class="s2"> w = </span><span class="si">%d</span><span class="se">\n</span><span class="s2"> T = </span><span class="si">%d</span><span class="se">\n</span><span class="s2"> e = </span><span class="si">%f</span><span class="se">\n</span><span class="s2"> P0 = </span><span class="si">%d</span><span class="se">\n</span><span class="s2"> t = </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">P0</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span>
+</pre></div>
 
 <p>Dimana n = Jumlah Sampel</p>
 <p>m = Jumlah Fitur</p>
@@ -620,12 +629,11 @@ print(&quot; n = %d\n m = %d\n c = %d\n w = %d\n T = %d\n e = %f\n P0 = %d\n t =
  t = 1
 </code></pre>
 <h3 id="2-membuat-matriks-derajat-cluster">2. Membuat Matriks derajat cluster<a class="headerlink" href="#2-membuat-matriks-derajat-cluster" title="Permanent link">&para;</a></h3>
-<pre><code class="python">random.seed(42)
-U = np.array([[random.uniform(0, 1) for _ in range(c)] for _ in range(n)])
-print(&quot;U &gt;&gt;\n&quot;)
-print(U)
-
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;U &gt;&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
+</pre></div>
 
 <pre><code>U &gt;&gt;
 
@@ -637,13 +645,12 @@ print(U)
  [0.54494148 0.22044062 0.58926568]]
 </code></pre>
 <h3 id="3-menghitung-pusat-cluster">3. Menghitung Pusat Cluster<a class="headerlink" href="#3-menghitung-pusat-cluster" title="Permanent link">&para;</a></h3>
-<pre><code class="python"># Caution: NP Array is math-agnostic (column-by-column)
-def cluster(U, D, x, y): return sum([U[i,y]**w*D[i,x] for i in range(n)])/sum([U[i,y]**w for i in range(n)])
-V = np.array([[cluster(U,D,x,y) for x in range(m)] for y in range(c)])
-print(&quot;V &gt;&gt;\n&quot;)
-print(V)
-
-</code></pre>
+<div class="highlight"><pre><span></span><span class="c1"># Caution: NP Array is math-agnostic (column-by-column)</span>
+<span class="k">def</span> <span class="nf">cluster</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">U</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">y</span><span class="p">]</span><span class="o">**</span><span class="n">w</span><span class="o">*</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span><span class="o">/</span><span class="nb">sum</span><span class="p">([</span><span class="n">U</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">y</span><span class="p">]</span><span class="o">**</span><span class="n">w</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">cluster</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)]</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">)])</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;V &gt;&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+</pre></div>
 
 <pre><code>V &gt;&gt;
 
@@ -655,23 +662,21 @@ print(V)
   1.17372391e+01]]
 </code></pre>
 <h3 id="4-hitung-fungsi-objektif-pada-t">4. Hitung Fungsi Objektif pada t<a class="headerlink" href="#4-hitung-fungsi-objektif-pada-t" title="Permanent link">&para;</a></h3>
-<pre><code class="python">def objective(V,U,D): return sum([sum([sum([(D[i,j]-V[k,j])**2 for j in range(m)])*(U[i,k]**w) for k in range(c)]) for i in range(n)])
-Pt = objective(V,U,D)
-print(&quot;Pt &gt;&gt;\n&quot;)
-print(Pt)
-
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="n">D</span><span class="p">):</span> <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">sum</span><span class="p">([</span><span class="nb">sum</span><span class="p">([(</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">V</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="n">j</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)])</span><span class="o">*</span><span class="p">(</span><span class="n">U</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">]</span><span class="o">**</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">)])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+<span class="n">Pt</span> <span class="o">=</span> <span class="n">objective</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Pt &gt;&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">Pt</span><span class="p">)</span>
+</pre></div>
 
 <pre><code>Pt &gt;&gt;
 
 12771.30605980444
 </code></pre>
 <h3 id="5-hitung-ulang-matrik-derajat-cluster">5. Hitung Ulang Matrik Derajat Cluster<a class="headerlink" href="#5-hitung-ulang-matrik-derajat-cluster" title="Permanent link">&para;</a></h3>
-<pre><code class="python">def converge(V,D,i,k): return (sum([(D[i,j]-V[k,j])**2 for j in range(m)])**(-1/(w-1)))/sum([sum([(D[i,j]-V[k,j])**2 for j in range(m)])**(-1/(w-1)) for k in range(c)])
-print(&quot;U &gt;&gt;\n&quot;)
-np.array([[converge(V,D,i,k) for k in range(c)] for i in range(n)])
-
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">converge</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">):</span> <span class="k">return</span> <span class="p">(</span><span class="nb">sum</span><span class="p">([(</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">V</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="n">j</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)])</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">w</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span><span class="o">/</span><span class="nb">sum</span><span class="p">([</span><span class="nb">sum</span><span class="p">([(</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">V</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="n">j</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)])</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">w</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">)])</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;U &gt;&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">converge</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+</pre></div>
 
 <pre><code>U &gt;&gt;
 
@@ -684,23 +689,22 @@ array([[1.67779651e-02, 6.48642159e-01, 3.34579876e-01],
        [2.95350488e-03, 9.23775417e-01, 7.32710785e-02]])
 </code></pre>
 <h3 id="6-cek-apakah-sudah-berhenti-atau-loop-kembali">6. Cek apakah sudah berhenti atau loop kembali<a class="headerlink" href="#6-cek-apakah-sudah-berhenti-atau-loop-kembali" title="Permanent link">&para;</a></h3>
-<pre><code class="python">def iterate(U):
-    V = np.array([[cluster(U, D, x, y) for x in range(m)] for y in range(c)])
-    return np.array([[converge(V,D,i,k) for k in range(c)] for i in range(n)]), objective(V,U,D)
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">iterate</span><span class="p">(</span><span class="n">U</span><span class="p">):</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">cluster</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)]</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">)])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">converge</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]),</span> <span class="n">objective</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
 
-def fuzzyCM(U):
-    #U = np.array([[random.uniform(0, 1) for _ in range(c)] for _ in range(n)])
+<span class="k">def</span> <span class="nf">fuzzyCM</span><span class="p">(</span><span class="n">U</span><span class="p">):</span>
+    <span class="c1">#U = np.array([[random.uniform(0, 1) for _ in range(c)] for _ in range(n)])</span>
 
-    U, P2, P, t = *iterate(U), 0, 1
-    while abs(P2 - P) &gt; e and t &lt; T:
-        U, P2, P, t = *iterate(U), P2, t+1
-    return U, t
+    <span class="n">U</span><span class="p">,</span> <span class="n">P2</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="o">*</span><span class="n">iterate</span><span class="p">(</span><span class="n">U</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">P2</span> <span class="o">-</span> <span class="n">P</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">e</span> <span class="ow">and</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">T</span><span class="p">:</span>
+        <span class="n">U</span><span class="p">,</span> <span class="n">P2</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="o">*</span><span class="n">iterate</span><span class="p">(</span><span class="n">U</span><span class="p">),</span> <span class="n">P2</span><span class="p">,</span> <span class="n">t</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">U</span><span class="p">,</span> <span class="n">t</span>
 
-FuzzyResult, FuzzyIters = fuzzyCM(U)
-print(&quot;Iterating %d times, fuzzy result &gt;&gt; \n&quot; % FuzzyIters)
-print(FuzzyResult)
-
-</code></pre>
+<span class="n">FuzzyResult</span><span class="p">,</span> <span class="n">FuzzyIters</span> <span class="o">=</span> <span class="n">fuzzyCM</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Iterating </span><span class="si">%d</span><span class="s2"> times, fuzzy result &gt;&gt; </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">FuzzyIters</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">FuzzyResult</span><span class="p">)</span>
+</pre></div>
 
 <pre><code>Iterating 7 times, fuzzy result &gt;&gt;
 
@@ -712,9 +716,8 @@ print(FuzzyResult)
  [1.16981231e-03 7.98268525e-01 2.00561663e-01]]
 </code></pre>
 <h3 id="7-ambil-nilai-terbesar-pada-kolom-sebagai-cluster">7. Ambil Nilai Terbesar pada kolom sebagai cluster<a class="headerlink" href="#7-ambil-nilai-terbesar-pada-kolom-sebagai-cluster" title="Permanent link">&para;</a></h3>
-<pre><code class="python">table(DataFrame([D[i].tolist()+[np.argmax(FuzzyResult[i].tolist())] for i in range(n)], columns=Data.columns.tolist()+[&quot;Cluster Index&quot;]))
-
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">table</span><span class="p">(</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="o">+</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">FuzzyResult</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)],</span> <span class="n">columns</span><span class="o">=</span><span class="n">Data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="o">+</span><span class="p">[</span><span class="s2">&quot;Cluster Index&quot;</span><span class="p">]))</span>
+</pre></div>
 
 <table>
 <thead>

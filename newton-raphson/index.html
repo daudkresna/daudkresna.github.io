@@ -430,6 +430,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../richardson-extrapolation/" title="Richardson Extrapolation" class="md-nav__link">
+      Richardson Extrapolation
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -535,49 +547,48 @@ x_1 = x_0 - \frac{f(x_0)}{f'(x_0)} , x_2 = x_1 - \frac{f(x_1)}{f'(x_1)}, ... , x
 <h3 id="implementasi-pemrograman"><strong>Implementasi Pemrograman</strong><a class="headerlink" href="#implementasi-pemrograman" title="Permanent link">&para;</a></h3>
 <p>Implementasi Newton-Raphson untuk fungsi <em>f(x)= e^x - 4x</em></p>
 <p>maka kita membuat turunan untuk fungsi tersebut yaitu <em>f'(x) = e^x - 4</em></p>
-<pre><code class="python">import math
-e = 2.71828
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mf">2.71828</span>
 
-def fungsi(x):
-    x = float((e**x) - (4*x))
-    return x
+<span class="k">def</span> <span class="nf">fungsi</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">((</span><span class="n">e</span><span class="o">**</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">x</span>
 
-def fungsiturunan(x):
-    x = float((e**x) - (4))
-    return x
+<span class="k">def</span> <span class="nf">fungsiturunan</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">((</span><span class="n">e</span><span class="o">**</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">x</span>
 
-x = float(input('Masukkan nilai awal = '))
-error = float(input('Masukkan nilai error = '))
-perulangan = int(input('Masukkan maksimal pengulangan = '))
+<span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Masukkan nilai awal = &#39;</span><span class="p">))</span>
+<span class="n">error</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Masukkan nilai error = &#39;</span><span class="p">))</span>
+<span class="n">perulangan</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Masukkan maksimal pengulangan = &#39;</span><span class="p">))</span>
 
-iterasi = 0
-selisih = error+1
-while iterasi &lt;= perulangan  and selisih&gt;error :
-    iterasi += 1
-    f_2 = x - (fungsi(x)/fungsiturunan(x))
-    selisih = math.fabs(f_2 - x)
-    x = f_2
-    print(&quot;Iterasi ke = &quot;,iterasi,&quot;, x = &quot;,f_2, &quot;, f(&quot;,f_2,&quot;) = &quot;,fungsi(f_2),&quot;, selisih = &quot;,error)
-    if iterasi &lt;= perulangan:
-        print(&quot;Perulangan Mencapai Batas Maksimal dengan hasil = &quot;, f_2)
-    else :
-        print(&quot;Toleransi tidak terpenuhi&quot;)
-
-</code></pre>
+<span class="n">iterasi</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">selisih</span> <span class="o">=</span> <span class="n">error</span><span class="o">+</span><span class="mi">1</span>
+<span class="k">while</span> <span class="n">iterasi</span> <span class="o">&lt;=</span> <span class="n">perulangan</span>  <span class="ow">and</span> <span class="n">selisih</span><span class="o">&gt;</span><span class="n">error</span> <span class="p">:</span>
+    <span class="n">iterasi</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">f_2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="n">fungsi</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">fungsiturunan</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">selisih</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">f_2</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">f_2</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Iterasi ke = &quot;</span><span class="p">,</span><span class="n">iterasi</span><span class="p">,</span><span class="s2">&quot;, x = &quot;</span><span class="p">,</span><span class="n">f_2</span><span class="p">,</span> <span class="s2">&quot;, f(&quot;</span><span class="p">,</span><span class="n">f_2</span><span class="p">,</span><span class="s2">&quot;) = &quot;</span><span class="p">,</span><span class="n">fungsi</span><span class="p">(</span><span class="n">f_2</span><span class="p">),</span><span class="s2">&quot;, selisih = &quot;</span><span class="p">,</span><span class="n">error</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">iterasi</span> <span class="o">&lt;=</span> <span class="n">perulangan</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Perulangan Mencapai Batas Maksimal dengan hasil = &quot;</span><span class="p">,</span> <span class="n">f_2</span><span class="p">)</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Toleransi tidak terpenuhi&quot;</span><span class="p">)</span>
+</pre></div>
 
 <p>Dengan Output sebagai berikut :</p>
-<pre><code class="python">Masukkan nilai awal = 0
-Masukkan nilai error = 0.0001
-Masukkan maksimal pengulangan = 20
-Iterasi ke =  1 , x =  0.3333333333333333 , f( 0.3333333333333333 ) =  0.06227877883196098 , selisih =  0.0001
-Perulangan Mencapai Batas Maksimal dengan hasil =  0.3333333333333333
-Iterasi ke =  2 , x =  0.35724635301940616 , f( 0.35724635301940616 ) =  0.0004022049593612742 , selisih =  0.0001
-Perulangan Mencapai Batas Maksimal dengan hasil =  0.35724635301940616
-Iterasi ke =  3 , x =  0.35740281572145605 , f( 0.35740281572145605 ) =  1.734656973617632e-08 , selisih =  0.0001
-Perulangan Mencapai Batas Maksimal dengan hasil =  0.35740281572145605
-Iterasi ke =  4 , x =  0.3574028224700733 , f( 0.3574028224700733 ) =  -6.439293542825908e-15 , selisih =  0.0001
-Perulangan Mencapai Batas Maksimal dengan hasil =  0.3574028224700733
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">Masukkan</span> <span class="n">nilai</span> <span class="n">awal</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Masukkan</span> <span class="n">nilai</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">0.0001</span>
+<span class="n">Masukkan</span> <span class="n">maksimal</span> <span class="n">pengulangan</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">Iterasi</span> <span class="n">ke</span> <span class="o">=</span>  <span class="mi">1</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span>  <span class="mf">0.3333333333333333</span> <span class="p">,</span> <span class="n">f</span><span class="p">(</span> <span class="mf">0.3333333333333333</span> <span class="p">)</span> <span class="o">=</span>  <span class="mf">0.06227877883196098</span> <span class="p">,</span> <span class="n">selisih</span> <span class="o">=</span>  <span class="mf">0.0001</span>
+<span class="n">Perulangan</span> <span class="n">Mencapai</span> <span class="n">Batas</span> <span class="n">Maksimal</span> <span class="n">dengan</span> <span class="n">hasil</span> <span class="o">=</span>  <span class="mf">0.3333333333333333</span>
+<span class="n">Iterasi</span> <span class="n">ke</span> <span class="o">=</span>  <span class="mi">2</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span>  <span class="mf">0.35724635301940616</span> <span class="p">,</span> <span class="n">f</span><span class="p">(</span> <span class="mf">0.35724635301940616</span> <span class="p">)</span> <span class="o">=</span>  <span class="mf">0.0004022049593612742</span> <span class="p">,</span> <span class="n">selisih</span> <span class="o">=</span>  <span class="mf">0.0001</span>
+<span class="n">Perulangan</span> <span class="n">Mencapai</span> <span class="n">Batas</span> <span class="n">Maksimal</span> <span class="n">dengan</span> <span class="n">hasil</span> <span class="o">=</span>  <span class="mf">0.35724635301940616</span>
+<span class="n">Iterasi</span> <span class="n">ke</span> <span class="o">=</span>  <span class="mi">3</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span>  <span class="mf">0.35740281572145605</span> <span class="p">,</span> <span class="n">f</span><span class="p">(</span> <span class="mf">0.35740281572145605</span> <span class="p">)</span> <span class="o">=</span>  <span class="mf">1.734656973617632e-08</span> <span class="p">,</span> <span class="n">selisih</span> <span class="o">=</span>  <span class="mf">0.0001</span>
+<span class="n">Perulangan</span> <span class="n">Mencapai</span> <span class="n">Batas</span> <span class="n">Maksimal</span> <span class="n">dengan</span> <span class="n">hasil</span> <span class="o">=</span>  <span class="mf">0.35740281572145605</span>
+<span class="n">Iterasi</span> <span class="n">ke</span> <span class="o">=</span>  <span class="mi">4</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span>  <span class="mf">0.3574028224700733</span> <span class="p">,</span> <span class="n">f</span><span class="p">(</span> <span class="mf">0.3574028224700733</span> <span class="p">)</span> <span class="o">=</span>  <span class="o">-</span><span class="mf">6.439293542825908e-15</span> <span class="p">,</span> <span class="n">selisih</span> <span class="o">=</span>  <span class="mf">0.0001</span>
+<span class="n">Perulangan</span> <span class="n">Mencapai</span> <span class="n">Batas</span> <span class="n">Maksimal</span> <span class="n">dengan</span> <span class="n">hasil</span> <span class="o">=</span>  <span class="mf">0.3574028224700733</span>
+</pre></div>
 
 <p>Penjelasan :</p>
 <ol>

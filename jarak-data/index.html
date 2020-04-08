@@ -486,6 +486,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../richardson-extrapolation/" title="Richardson Extrapolation" class="md-nav__link">
+      Richardson Extrapolation
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -607,7 +619,7 @@
 <p>Minkowski Distance termasuk <i>Euclidean Distance</i> dan <i>Manhattan Distance</i>, perhitungan jarak dimana nilai m adalah bilangan asli positif dan xi dan yi adalah 2 vector dalam dimensi n</p>
 <p>Rumus untuk <i>Minkowski Distance</i> adalah:
 $$
-d_{min}=(\sum_{i=1}^n|x_{i}-y_{i}|^m)^\frac{1}{m},m\ge1
+d_{min}=(\sum_{i=1}<sup>n|x_{i}-y_{i}|</sup>m)^\frac{1}{m},m\ge1
 $$</p>
 <h4 id="manhattan-distance">Manhattan Distance<a class="headerlink" href="#manhattan-distance" title="Permanent link">&para;</a></h4>
 <p><i>Manhattan Distance</i> agak berbeda daripada <i>Minkowski Distance</i> dimana nilai m=1 sama halnya dengan <i>Minkowski Distance</i> yang sensitif terhadap oulier</p>
@@ -625,23 +637,23 @@ d_{man}=\sum_{i=1}^{n}|x_{i}-y_{i}|
 <h4 id="average-distance">Average Distance<a class="headerlink" href="#average-distance" title="Permanent link">&para;</a></h4>
 <p>Mengenai kelemahan daripada <i>Euclidean Distance</i>, <i>Average Distance</i> adalah modifikasi daripada <i>Euclidean Distance</i> untuk memperbaiki hasil. untuk dua data x,y dalam dimensi-n, rumusnya adalah:
 $$
-d_{ave}=\left(\frac{1}{n}\sum_{i=1}^{n}(x_{i}-y_{i})^2\right)^\frac{1}{2}
+d_{ave}=\left(\frac{1}{n}\sum_{i=1}<sup>{n}(x_{i}-y_{i})</sup>2\right)^\frac{1}{2}
 $$</p>
 <h4 id="weighted-euclidean-distance">Weighted Euclidean Distance<a class="headerlink" href="#weighted-euclidean-distance" title="Permanent link">&para;</a></h4>
 <p>Jika kedudukan masing masing atribut tersedia, <i>Weighted Euclidean Distance</i> adalah modifikasi dari <i>Euclidean Distance</i>. Jarak ini mempunyai rumus:</p>
 <p>$$
-d_{we}=\left(\sum_{i=1}^n w_{i}(x_{i}-y_{i}\right)^2)^\frac{1}{2}
+d_{we}=\left(\sum_{i=1}^n w_{i}(x_{i}-y_{i}\right)<sup>2)</sup>\frac{1}{2}
 $$
 Dimana w adalah berat yang diberikan kepada komponen ke-i</p>
 <h4 id="chord-distance">Chord Distance<a class="headerlink" href="#chord-distance" title="Permanent link">&para;</a></h4>
 <p><i>Chord Distance</i> adalah hasil modifikasi lainnya dari <i>Euclidean Distance</i> untuk mengatasi kelemahan <i>Euclidean Distance</i> lainnya. jarak ini juga bisa digunakan untuk memecahkan masalah yang disebabkan skala pengukuran juga. Jarak ini bisa di kalkulasikan dari non-normalized data. rumus jarak ini adalah:
 $$
-d_{chord}=\left(2-2 \frac{{\sum_{i=1}^n}x_{i}y_{i}}{||x||{2}||y||{2}}\right)^\frac{1}{2}
+d_{chord}=\left(2-2 \frac{{\sum_{i=1}<sup>n}x_{i}y_{i}}{||x||{2}||y||{2}}\right)</sup>\frac{1}{2}
 $$</p>
 <h4 id="mahalanobis-distance">Mahalanobis Distance<a class="headerlink" href="#mahalanobis-distance" title="Permanent link">&para;</a></h4>
 <p><i>Mahalobis Distance</i> adalah perbedaan ke Euclidean dan Manhattan distance yaitu jarak ini terbebas dari hubungan data yang mana dua data berasal
 $$
-   d_{mah}=\sqrt{(x-y)S^{-1}(x-y)^{T}}
+   d_{mah}=\sqrt{(x-y)S<sup>{-1}(x-y)</sup>{T}}
 $$</p>
 <h4 id="cosine-measure">Cosine Measure<a class="headerlink" href="#cosine-measure" title="Permanent link">&para;</a></h4>
 <p>Persammaan Cosine kebanyakan digunakan untuk mencari kemiripan dokumen dan rumusnya adalah:
@@ -651,14 +663,14 @@ $$</p>
 <h4 id="pearson-correlation">Pearson Correlation<a class="headerlink" href="#pearson-correlation" title="Permanent link">&para;</a></h4>
 <p><i>Pearson Correlation</i> Digunakan dalam clustering ekspresi data. Ukuran kemiripan menghitung kemiripan antara bentuk dari dua pola ekspresi. Rumusnya adalah:
 $$
-   Pearson(x,y)=\frac{\sum_{i=1}^n(x_{i}-\mu_{x})(y_{i}-\mu_{y})}{\sqrt{\sum_{i=1}^n(x_{i}-y_{i})^2}\sqrt{\sum_{i=1}^n(x_{i}-y_{i})^2}}
+   Pearson(x,y)=\frac{\sum_{i=1}<sup>n(x_{i}-\mu_{x})(y_{i}-\mu_{y})}{\sqrt{\sum_{i=1}</sup>n(x_{i}-y_{i})<sup>2}\sqrt{\sum_{i=1}</sup>n(x_{i}-y_{i})^2}}
 $$</p>
 <p>Dimana mu x dan mu y dimaksudkan untuk x dan y. Jarak ini juga memiliki kelemahan yaitu sensitif terhadap outliers </p>
 <p>Contoh Program menghitung jarak data dari data di internet:</p>
-<pre><code class="python">import pandas as pd
-df = pd.read_csv(&quot;tae.csv&quot;,nrows=4)
-df
-</code></pre>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;tae.csv&quot;</span><span class="p">,</span><span class="n">nrows</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
 
 <div>
 <style scoped>
@@ -727,22 +739,22 @@ df
 </table>
 </div>
 
-<pre><code class="python">binary=[0,3]
-num=[1,2,4,5]
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">binary</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">num</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
 
-<pre><code class="python">from IPython.display import HTML, display
-import tabulate
-table=[
-    [&quot;Data&quot;]+[&quot;Jarak&quot;]+[&quot;Numeric&quot;]+[&quot;Binary&quot;],
-    [&quot;v1-v2&quot;]+[0]+[0]+[0],
-    [&quot;v1-v3&quot;]+[0]+[0]+[0],
-    [&quot;v2-v3&quot;]+[0]+[0]+[0],
-    [&quot;v3-v4&quot;]+[0]+[0]+[0],
-    ]
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
+<span class="kn">import</span> <span class="nn">tabulate</span>
+<span class="n">table</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;Data&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="s2">&quot;Jarak&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="s2">&quot;Numeric&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="s2">&quot;Binary&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;v1-v2&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;v1-v3&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;v2-v3&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;v3-v4&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">]</span>
 
-display(HTML(tabulate.tabulate(table, tablefmt='html')))
-</code></pre>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">tabulate</span><span class="o">.</span><span class="n">tabulate</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;html&#39;</span><span class="p">)))</span>
+</pre></div>
 
 <table>
 <tbody>
@@ -754,29 +766,29 @@ display(HTML(tabulate.tabulate(table, tablefmt='html')))
 </tbody>
 </table>
 
-<pre><code class="python">def chordDist(v1,v2,jnis):
-    jmlh=0
-    normv1=0
-    normv2=0
-    for x in range (len(jnis)):
-        normv1=normv1+(int(df.values.tolist()[v1][jnis[x]])**2)
-        normv2=normv2+(int(df.values.tolist()[v2][jnis[x]])**2)
-        jmlh=jmlh+(int(df.values.tolist()[v1][jnis[x]])*int(df.values.tolist()[v2][jnis[x]]))
-    return ((2-(2*jmlh/(normv1*normv2)))**0.5)
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">chordDist</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">,</span><span class="n">jnis</span><span class="p">):</span>
+    <span class="n">jmlh</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">normv1</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">normv2</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">jnis</span><span class="p">)):</span>
+        <span class="n">normv1</span><span class="o">=</span><span class="n">normv1</span><span class="o">+</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="n">v1</span><span class="p">][</span><span class="n">jnis</span><span class="p">[</span><span class="n">x</span><span class="p">]])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">normv2</span><span class="o">=</span><span class="n">normv2</span><span class="o">+</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="n">v2</span><span class="p">][</span><span class="n">jnis</span><span class="p">[</span><span class="n">x</span><span class="p">]])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">jmlh</span><span class="o">=</span><span class="n">jmlh</span><span class="o">+</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="n">v1</span><span class="p">][</span><span class="n">jnis</span><span class="p">[</span><span class="n">x</span><span class="p">]])</span><span class="o">*</span><span class="nb">int</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="n">v2</span><span class="p">][</span><span class="n">jnis</span><span class="p">[</span><span class="n">x</span><span class="p">]]))</span>
+    <span class="k">return</span> <span class="p">((</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">jmlh</span><span class="o">/</span><span class="p">(</span><span class="n">normv1</span><span class="o">*</span><span class="n">normv2</span><span class="p">)))</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
 
-<pre><code class="python">from IPython.display import HTML, display
-import tabulate
-table=[
-    [&quot;Data&quot;]+[&quot;Jarak&quot;]+[&quot;Numeric&quot;]+[&quot;Binary&quot;],
-    [&quot;v1-v2&quot;]+[0]+[chordDist(0,1,num)]+[0],
-    [&quot;v1-v3&quot;]+[0]+[chordDist(0,2,num)]+[0],
-    [&quot;v2-v3&quot;]+[0]+[chordDist(1,2,num)]+[0],
-    [&quot;v3-v4&quot;]+[0]+[chordDist(2,3,num)]+[0],
-    ]
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
+<span class="kn">import</span> <span class="nn">tabulate</span>
+<span class="n">table</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;Data&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="s2">&quot;Jarak&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="s2">&quot;Numeric&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="s2">&quot;Binary&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;v1-v2&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">chordDist</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">num</span><span class="p">)]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;v1-v3&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">chordDist</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">num</span><span class="p">)]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;v2-v3&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">chordDist</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">num</span><span class="p">)]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;v3-v4&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">chordDist</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">num</span><span class="p">)]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">]</span>
 
-display(HTML(tabulate.tabulate(table, tablefmt='html')))
-</code></pre>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">tabulate</span><span class="o">.</span><span class="n">tabulate</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;html&#39;</span><span class="p">)))</span>
+</pre></div>
 
 <table>
 <tbody>
@@ -789,35 +801,35 @@ display(HTML(tabulate.tabulate(table, tablefmt='html')))
 </table>
 
 <p>BINARY</p>
-<pre><code class="python">def binaryDist(v1,v2,jnis):
-    q=0
-    r=0
-    s=0
-    t=0
-    for x in range (len(jnis)):
-        if (int(df.values.tolist()[v1][jnis[x]]))==1 and (int(df.values.tolist()[v2][jnis[x]]))==1:
-            q=q+1
-        elif (int(df.values.tolist()[v1][jnis[x]]))==1 and (int(df.values.tolist()[v2][jnis[x]]))==2:
-            r=r+1
-        elif (int(df.values.tolist()[v1][jnis[x]]))==2 and (int(df.values.tolist()[v2][jnis[x]]))==1:
-            s=s+1
-        else:
-            t=t+1
-    return ((r+s)/(q+r+s+t))
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">binaryDist</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">,</span><span class="n">jnis</span><span class="p">):</span>
+    <span class="n">q</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">r</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">t</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">jnis</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="n">v1</span><span class="p">][</span><span class="n">jnis</span><span class="p">[</span><span class="n">x</span><span class="p">]]))</span><span class="o">==</span><span class="mi">1</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="n">v2</span><span class="p">][</span><span class="n">jnis</span><span class="p">[</span><span class="n">x</span><span class="p">]]))</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">q</span><span class="o">=</span><span class="n">q</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="n">v1</span><span class="p">][</span><span class="n">jnis</span><span class="p">[</span><span class="n">x</span><span class="p">]]))</span><span class="o">==</span><span class="mi">1</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="n">v2</span><span class="p">][</span><span class="n">jnis</span><span class="p">[</span><span class="n">x</span><span class="p">]]))</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+            <span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="n">v1</span><span class="p">][</span><span class="n">jnis</span><span class="p">[</span><span class="n">x</span><span class="p">]]))</span><span class="o">==</span><span class="mi">2</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="n">v2</span><span class="p">][</span><span class="n">jnis</span><span class="p">[</span><span class="n">x</span><span class="p">]]))</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">r</span><span class="o">+</span><span class="n">s</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">q</span><span class="o">+</span><span class="n">r</span><span class="o">+</span><span class="n">s</span><span class="o">+</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
 
-<pre><code class="python">from IPython.display import HTML, display
-import tabulate
-table=[
-    [&quot;Data&quot;]+[&quot;Jarak&quot;]+[&quot;Numeric&quot;]+[&quot;Binary&quot;],
-    [&quot;v1-v2&quot;]+[0]+[chordDist(0,1,num)]+[binaryDist(0,1,binary)],
-    [&quot;v1-v3&quot;]+[0]+[chordDist(0,2,num)]+[binaryDist(0,2,binary)],
-    [&quot;v2-v3&quot;]+[0]+[chordDist(1,2,num)]+[binaryDist(1,2,binary)],
-    [&quot;v3-v4&quot;]+[0]+[chordDist(2,3,num)]+[binaryDist(2,3,binary)],
-    ]
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
+<span class="kn">import</span> <span class="nn">tabulate</span>
+<span class="n">table</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;Data&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="s2">&quot;Jarak&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="s2">&quot;Numeric&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="s2">&quot;Binary&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;v1-v2&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">chordDist</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">num</span><span class="p">)]</span><span class="o">+</span><span class="p">[</span><span class="n">binaryDist</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">binary</span><span class="p">)],</span>
+    <span class="p">[</span><span class="s2">&quot;v1-v3&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">chordDist</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">num</span><span class="p">)]</span><span class="o">+</span><span class="p">[</span><span class="n">binaryDist</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">binary</span><span class="p">)],</span>
+    <span class="p">[</span><span class="s2">&quot;v2-v3&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">chordDist</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">num</span><span class="p">)]</span><span class="o">+</span><span class="p">[</span><span class="n">binaryDist</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">binary</span><span class="p">)],</span>
+    <span class="p">[</span><span class="s2">&quot;v3-v4&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">chordDist</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">num</span><span class="p">)]</span><span class="o">+</span><span class="p">[</span><span class="n">binaryDist</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">binary</span><span class="p">)],</span>
+    <span class="p">]</span>
 
-display(HTML(tabulate.tabulate(table, tablefmt='html')))
-</code></pre>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">tabulate</span><span class="o">.</span><span class="n">tabulate</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;html&#39;</span><span class="p">)))</span>
+</pre></div>
 
 <table>
 <tbody>
@@ -832,7 +844,7 @@ display(HTML(tabulate.tabulate(table, tablefmt='html')))
 <h3 id="referensi">Referensi<a class="headerlink" href="#referensi" title="Permanent link">&para;</a></h3>
 <blockquote>
 <ol>
-<li>https://www.researchgate.net/publication/286637899_A_Comparison_Study_on_Similarity_and_Dissimilarity_Measures_in_Clustering_Continuous_Data</li>
+<li><a href="https://www.researchgate.net/publication/286637899_A_Comparison_Study_on_Similarity_and_Dissimilarity_Measures_in_Clustering_Continuous_Data">https://www.researchgate.net/publication/286637899_A_Comparison_Study_on_Similarity_and_Dissimilarity_Measures_in_Clustering_Continuous_Data</a></li>
 <li>mulaab.github.io/datamining/memahami-data/</li>
 </ol>
 </blockquote>

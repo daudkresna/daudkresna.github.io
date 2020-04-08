@@ -440,6 +440,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../richardson-extrapolation/" title="Richardson Extrapolation" class="md-nav__link">
+      Richardson Extrapolation
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -515,14 +527,14 @@
                 <h2 id="teorema-bayes">Teorema Bayes :<a class="headerlink" href="#teorema-bayes" title="Permanent link">&para;</a></h2>
 <h2 id="tipe-data-numerik"><strong>Tipe Data Numerik</strong><a class="headerlink" href="#tipe-data-numerik" title="Permanent link">&para;</a></h2>
 <p>$$
-P(c|x) = \frac{P(x_i|c) P(c)}{P(x_i)}
+P(c|x) = \frac{P(x_i|c) P&copy;}{P(x_i)}
 $$
-Dimana (P(c)) = Prior/Probabilitas kelas dari data yang ada
+Dimana (P&copy;) = Prior/Probabilitas kelas dari data yang ada
 <span><span class="MathJax_Preview">P(c)</span><script type="math/tex">P(c)</script></span> = Prior (Probability)
 <span><span class="MathJax_Preview">P(xi)</span><script type="math/tex">P(xi)</script></span> = Evidenence dari setiap fitur/Probabilitas dari setiap fitur</p>
 <p>(P(xi|c) = Likelihood dari setiap fitur yang diperoleh dari setiap kelas dengan menggunakan rumus:
 $$
-P(x_i|c) = \frac{1}{\sqrt{2 \pi \sigma_c}} e^{-\frac{1}{2}(\frac{x_i-\mu_c}{\sigma_c})^2}
+P(x_i|c) = \frac{1}{\sqrt{2 \pi \sigma_c}} e<sup>{-\frac{1}{2}(\frac{x_i-\mu_c}{\sigma_c})</sup>2}
 $$</p>
 <h2 id="tipe-data-categorical"><strong>Tipe Data Categorical</strong><a class="headerlink" href="#tipe-data-categorical" title="Permanent link">&para;</a></h2>
 <div>
@@ -657,7 +669,7 @@ P(c|x) = \frac{P(x_i|c) P(c)}{P(x_i)}
 </table>
 <p>Untuk menentukan/menebak kelas dari data yang baru kita akan memakai teknik naive bayes. Dan didalam data baru tersebut terdapat atribut categorical dan atribut numerik maka untuk atribut categorical kita menggunakan probabilitas atribut itu muncul dalam setiap kelas dan untuk data numerik kita menggunakan rumus :
 $$
-P(x_i|c) = \frac{1}{\sqrt{2 \pi \sigma_c}} e^{-\frac{1}{2}(\frac{x_i-\mu_c}{\sigma_c})^2}
+P(x_i|c) = \frac{1}{\sqrt{2 \pi \sigma_c}} e<sup>{-\frac{1}{2}(\frac{x_i-\mu_c}{\sigma_c})</sup>2}
 $$
 untuk menghitung rata rata dan standart deviasi dari atribut numerik 60 kita bisa menggunakan excel dan memperoleh hasil</p>
 <ul>
@@ -676,17 +688,17 @@ untuk menghitung rata rata dan standart deviasi dari atribut numerik 60 kita bis
 <li>Rainy </li>
 </ol>
 <p>Yes : 3/9 = 0,333333</p>
-<p>No : 2/5 = 0,4</p>
+<p>No : &#8534; = 0,4</p>
 <ol>
 <li>Humidity</li>
 </ol>
 <p>Yes : 3/9 = 0,333333</p>
-<p>No : 4/5 = 0,8</p>
+<p>No : &#8536; = 0,8</p>
 <ol>
 <li>False</li>
 </ol>
 <p>Yes : 6/9 = 0,666667</p>
-<p>No : 2/5 = 0,4</p>
+<p>No : &#8534; = 0,4</p>
 <p>P(Yes|x) = 0.1918044093</p>
 <p>P(No|x) = 0.1841326237</p>
 <p>Maka kita bisa menebak bahwa data baru tersebut memiliki kelas YES</p>

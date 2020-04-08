@@ -36,7 +36,7 @@
     
     
       
-        <title>Recursive Trapezoid Rule - Daud Kresna 180411100080</title>
+        <title>Richardson Extrapolation - Daud Kresna 180411100080</title>
       
     
     
@@ -77,7 +77,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#recursive-trapezoid-method" tabindex="1" class="md-skip">
+      <a href="#ekstrapolasi-richardson" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -103,7 +103,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Recursive Trapezoid Rule
+                Richardson Extrapolation
               
             </span>
           
@@ -377,6 +377,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../recursive-trapezoid/" title="Recursive Trapezoid Rule" class="md-nav__link">
+      Recursive Trapezoid Rule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -388,11 +400,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Recursive Trapezoid Rule
+        Richardson Extrapolation
       </label>
     
-    <a href="./" title="Recursive Trapezoid Rule" class="md-nav__link md-nav__link--active">
-      Recursive Trapezoid Rule
+    <a href="./" title="Richardson Extrapolation" class="md-nav__link md-nav__link--active">
+      Richardson Extrapolation
     </a>
     
       
@@ -404,27 +416,6 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#metode-recursive-trapezoid-1-interval" class="md-nav__link">
-    Metode Recursive Trapezoid 1 interval
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#metode-recursive-trapezoid-2-interval" class="md-nav__link">
-    Metode Recursive Trapezoid 2 interval
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#formula-recursive-trapezoid" class="md-nav__link">
-    Formula Recursive Trapezoid
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#program" class="md-nav__link">
@@ -441,18 +432,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../richardson-extrapolation/" title="Richardson Extrapolation" class="md-nav__link">
-      Richardson Extrapolation
-    </a>
   </li>
 
         
@@ -482,27 +461,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#metode-recursive-trapezoid-1-interval" class="md-nav__link">
-    Metode Recursive Trapezoid 1 interval
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#metode-recursive-trapezoid-2-interval" class="md-nav__link">
-    Metode Recursive Trapezoid 2 interval
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#formula-recursive-trapezoid" class="md-nav__link">
-    Formula Recursive Trapezoid
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#program" class="md-nav__link">
     Program
   </a>
@@ -525,165 +483,73 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/daudkresna/daudkresna.github.io/edit/master/docs/recursive-trapezoid.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/daudkresna/daudkresna.github.io/edit/master/docs/richardson-extrapolation.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="recursive-trapezoid-method">Recursive Trapezoid Method<a class="headerlink" href="#recursive-trapezoid-method" title="Permanent link">&para;</a></h1>
+                <h1 id="ekstrapolasi-richardson">Ekstrapolasi Richardson<a class="headerlink" href="#ekstrapolasi-richardson" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>Aturan trapesium adalah untuk aturan yang digunaka untuk menemukan nilai pasti integral - integral menggunakan metode numerik. Aturan ini terutama didasarkan pada rumus Newton-Cotes yang menyatakan bahwa seseorang dapat menemukan nilai tepat integral sebagai urutan polinomial.</p>
+<p>Ekstrapolasi Richardson merupakan metode yang menggunakan dua 
+perkiraan dari sebuah integral untuk mengkomputasi pendugaan ketiga, yang 
+lebih akurat. </p>
 </blockquote>
-<p>Asumsikan bahwa f (x) adalah fungsi kontinu pada interval yang diberikan [a, b]. Sekarang bagilah interval [a, b] menjadi n sub-zona yang sama</p>
-<h3 id="metode-recursive-trapezoid-1-interval">Metode Recursive Trapezoid 1 interval<a class="headerlink" href="#metode-recursive-trapezoid-1-interval" title="Permanent link">&para;</a></h3>
-<div>
-<div class="MathJax_Preview">
-h=b-a
-</div>
-<script type="math/tex; mode=display">
-h=b-a
-</script>
-</div>
-<div>
-<div class="MathJax_Preview">
-R(0,0)=\frac{b-a}{2}(f(a)+f(b))
-</div>
-<script type="math/tex; mode=display">
-R(0,0)=\frac{b-a}{2}(f(a)+f(b))
-</script>
-</div>
-<h3 id="metode-recursive-trapezoid-2-interval">Metode Recursive Trapezoid 2 interval<a class="headerlink" href="#metode-recursive-trapezoid-2-interval" title="Permanent link">&para;</a></h3>
-<div>
-<div class="MathJax_Preview">
-h=\frac{b-a}{2}
-</div>
-<script type="math/tex; mode=display">
-h=\frac{b-a}{2}
-</script>
-</div>
-<div>
-<div class="MathJax_Preview">
-R(1,0)=\frac{b-a}{2}[(f(a+h)+\frac{1}{2}f(a)+f(b))]
-</div>
-<script type="math/tex; mode=display">
-R(1,0)=\frac{b-a}{2}[(f(a+h)+\frac{1}{2}f(a)+f(b))]
-</script>
-</div>
-<div>
-<div class="MathJax_Preview">
-R(1,0)=\frac{1}{2}R(0,0)+h[f(a+h)]
-</div>
-<script type="math/tex; mode=display">
-R(1,0)=\frac{1}{2}R(0,0)+h[f(a+h)]
-</script>
-</div>
-<p>dimana R(0,0) berdasarkan estimasi sebelumnya dan f(a+h) berdasarkan pada titik baru
+<p>Tujuan ekstrapolasi Richardson ialah menghitung nilai integrasi yang lebih baik (improve) dibandingkan dengan I. </p>
+<p>Misalkan J adalah nilai integrasi yang lebih baik daripada I dengan jarak antar titik adalah h:
 $$
-h = \frac{b-a}{4}
-$$</p>
-<div>
-<div class="MathJax_Preview">
-R(2,0)=\frac{b-a}{4}[f(a+h)+f(a+2h)+f(a+3h)+\frac{1}{2}(f(a)+f(b))]
-</div>
-<script type="math/tex; mode=display">
-R(2,0)=\frac{b-a}{4}[f(a+h)+f(a+2h)+f(a+3h)+\frac{1}{2}(f(a)+f(b))]
-</script>
-</div>
-<div>
-<div class="MathJax_Preview">
-R(2,0)=\frac{1}{2}R(1,0)+h[f(a+h)+f(a+3h)]
-</div>
-<script type="math/tex; mode=display">
-R(2,0)=\frac{1}{2}R(1,0)+h[f(a+h)+f(a+3h)]
-</script>
-</div>
-<p>dimana R(1,0) berdasarkan estimasi sebelumnya dan f(a+h) berdasarkan titik baru</p>
-<h3 id="formula-recursive-trapezoid">Formula Recursive Trapezoid<a class="headerlink" href="#formula-recursive-trapezoid" title="Permanent link">&para;</a></h3>
-<p>dari deskripsi diatas maka bisa disimpulkan bahwa rumus recursive trapezoid adalah
+J = I(h) + Ch^q
 $$
-R(0,0) = \frac{b-a}{2}[f(a)+f(b)]
+Ekstrapolasikan h menjadi 2h, lalu hitung integrasi numeriknya :
+$$
+J = I (2h) + C(2h)^q
+$$
+Eliminasikan C dari kedua persamaan dengan menyamakan persamaan (1) dan persamaan (2):
+$$
+I(h) = Ch^q = I(2h) + C(2h)^q
+$$
+sehingga diperoleh
+$$
+C = \frac{I(h)-I(2h)}{(2<sup>q-1)h</sup>q}
 $$</p>
-<div>
-<div class="MathJax_Preview">
-R(n,0)=\frac{1}{2}R(n-1,0)+h[\sum_{k=1}^{2^{(n-1)}}f(a+(2k-1)h)]
-</div>
-<script type="math/tex; mode=display">
-R(n,0)=\frac{1}{2}R(n-1,0)+h[\sum_{k=1}^{2^{(n-1)}}f(a+(2k-1)h)]
-</script>
-</div>
-<div>
-<div class="MathJax_Preview">
-h = \frac{b-a}{2^n}
-</div>
-<script type="math/tex; mode=display">
-h = \frac{b-a}{2^n}
-</script>
-</div>
 <h3 id="program">Program<a class="headerlink" href="#program" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><span class="c1">#definisi fungsi</span>
-<span class="k">def</span> <span class="nf">fungsi</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">y</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="k">def</span> <span class="nf">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">Z</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">Z</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">m</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Z</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;fungsi yang digunakan adalah&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;f(x) = 1/(1+x)&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">D</span><span class="p">(</span><span class="n">Func</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">h</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">Func</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">h</span><span class="p">)</span><span class="o">-</span><span class="n">Func</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">h</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
 
+<span class="k">def</span> <span class="nf">Richardson_dif</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">a</span><span class="p">):</span> 
+    <span class="sd">&#39;&#39;&#39;Richardson extrapolation method for numerical calculation of first derivative &#39;&#39;&#39;</span>
+    <span class="n">k</span><span class="o">=</span><span class="mi">9</span> 
+    <span class="n">L</span><span class="o">=</span><span class="n">zeros</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">I</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+        <span class="n">L</span><span class="p">[</span><span class="n">I</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">D</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">I</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="n">j</span><span class="p">):</span>
+            <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="p">((</span><span class="mi">4</span><span class="o">**</span><span class="p">(</span><span class="n">j</span><span class="p">))</span><span class="o">*</span><span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">**</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan batas bawah integral : &quot;</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan batas atas integral : &quot;</span><span class="p">))</span>
-<span class="n">c</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;masukkan n : &quot;</span><span class="p">))</span>
-<span class="n">error</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;---------HASIL----------&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;iterasi&quot;</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;n&quot;</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;Trapezoid&quot;</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">iterasi</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">iterasi</span>
-    <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
-
-    <span class="n">xi</span> <span class="o">=</span> <span class="n">a</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">xi</span> <span class="o">=</span> <span class="n">xi</span> <span class="o">+</span> <span class="n">h</span>
-        <span class="n">y</span> <span class="o">+=</span> <span class="n">fungsi</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span>
-    <span class="n">trap</span> <span class="o">=</span><span class="p">((</span><span class="n">h</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">fungsi</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">fungsi</span><span class="p">(</span><span class="n">b</span><span class="p">)))</span><span class="o">/</span><span class="mi">2</span>
-    <span class="n">error</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trap</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">iterasi</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">trap</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">error</span><span class="p">[</span><span class="n">iterasi</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="k">print</span><span class="p">(</span><span class="n">error</span><span class="p">[</span><span class="n">iterasi</span><span class="p">])</span>
-<span class="n">hasil</span> <span class="o">=</span> <span class="p">(</span><span class="n">error</span><span class="p">[</span><span class="n">iterasi</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">error</span><span class="p">[</span><span class="n">iterasi</span><span class="p">])</span>
-<span class="k">print</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;estimasi error : &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">hasil</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; DIFERENSIASI NUMERIK DARI &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;=======================================================================&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;f = -0.1*x**4-0.15*x**3-0.5*x**2-0.25*x+1.2 dengan x = 0.5&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;=======================================================================&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%04.20f</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">Richardson_dif</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="o">-</span><span class="mf">0.15</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mf">0.25</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mf">1.2</span> <span class="p">,</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;=======================================================================&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;diff(2**cos(pi+sin(x)) dengan x = pi/2 adalah = </span><span class="si">%04.20f</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">Richardson_dif</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span><span class="o">**</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">+</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 
-<pre><code>fungsi yang digunakan adalah
-         f(x) = 1/(1+x)
-
-Masukkan batas bawah integral : 0
-Masukkan batas atas integral : 1
-masukkan n : 15
-
----------HASIL----------
-iterasi      n       Trapezoid
-1        1       0.75
-2        2       0.7083333333333333
-3        4       0.6970238095238095
-4        8       0.6941218503718504
-5        16          0.6933912022075267
-6        32          0.6932082082692488
-7        64          0.6931624388834033
-8        128         0.6931509952281075
-9        256         0.6931481342324433
-10       512         0.6931474189784099
-11       1024        0.6931472401645831
-12       2048        0.6931471954611083
-13       4096        0.6931471842852348
-14       8192        0.69314718149127
-15       16384       0.6931471807927745
-0.69314718149127
-0.6931471807927745
-6.984954836752877e-10
-estimasi error : 6.984954836752877e-10
-</code></pre>
+<p>Hasilnya</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="n">DIFERENSIASI</span> <span class="n">NUMERIK</span> <span class="n">DARI</span> <span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+<span class="o">=======================================================================</span>
+<span class="n">f</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="o">-</span><span class="mf">0.15</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mf">0.25</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mf">1.2</span> <span class="n">dengan</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="o">=======================================================================</span>
+<span class="o">-</span><span class="mf">0.91250000000000530687</span>
+<span class="o">=======================================================================</span>
+<span class="n">diff</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">+</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="n">dengan</span> <span class="n">x</span> <span class="o">=</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span> <span class="n">adalah</span> <span class="o">=</span> <span class="mf">0.16849558398154249050</span>
+<span class="o">&gt;&gt;&gt;</span> 
+</pre></div>
                 
                   
                 
@@ -704,7 +570,7 @@ estimasi error : 6.984954836752877e-10
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../newton-raphson/" title="Newton Raphson" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../recursive-trapezoid/" title="Recursive Trapezoid Rule" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -713,25 +579,11 @@ estimasi error : 6.984954836752877e-10
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Newton Raphson
+                Recursive Trapezoid Rule
               </span>
             </div>
           </a>
         
-        
-          <a href="../richardson-extrapolation/" title="Richardson Extrapolation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Richardson Extrapolation
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>

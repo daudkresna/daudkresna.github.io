@@ -501,6 +501,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../richardson-extrapolation/" title="Richardson Extrapolation" class="md-nav__link">
+      Richardson Extrapolation
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -673,16 +685,16 @@
 <h4 id="atribut-numerik">Atribut Numerik<a class="headerlink" href="#atribut-numerik" title="Permanent link">&para;</a></h4>
 <p>bersifat kuantitatif terukur dinyatakan dengan bilangan bulat atau nilai riel</p>
 <p>Program untuk menampilkan statistik deskriptif dari kumpulan data:</p>
-<pre><code class="python">from scipy import stats
-import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-import pandas as pd
-</code></pre>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+</pre></div>
 
-<pre><code class="python">df = pd.read_csv('Tinggi.csv')
-df
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Tinggi.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
 
 <div>
 <style scoped>
@@ -1141,24 +1153,24 @@ df
 <p>100 rows × 4 columns</p>
 </div>
 
-<pre><code class="python">from IPython.display import HTML, display
-import tabulate
-table=[
-        [&quot;method&quot;]+[x for x in df.columns],
-        [&quot;describe()&quot;]+['&lt;pre&gt;'+str(df[col].describe())+'&lt;/pre&gt;' for col in df.columns],
-        [&quot;count()&quot;]+[df[col].count() for col in df.columns],
-        [&quot;mean()&quot;]+[df[col].mean() for col in df.columns],
-        [&quot;std()&quot;]+[&quot;{:.2f}&quot;.format(df[col].std()) for col in df.columns],
-        [&quot;min()&quot;]+[df[col].min() for col in df.columns],
-        [&quot;max()&quot;]+[df[col].max() for col in df.columns],
-        [&quot;q1()&quot;]+[df[col].quantile(0.25) for col in df.columns],
-        [&quot;q2()&quot;]+[df[col].quantile(0.50) for col in df.columns],
-        [&quot;q3()&quot;]+[df[col].quantile(0.75) for col in df.columns],
-        [&quot;skew()&quot;]+[&quot;{:.2f}&quot;.format(df[col].skew()) for col in df.columns],
-     ]
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
+<span class="kn">import</span> <span class="nn">tabulate</span>
+<span class="n">table</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">[</span><span class="s2">&quot;method&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;describe()&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;&lt;pre&gt;&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span><span class="o">+</span><span class="s1">&#39;&lt;/pre&gt;&#39;</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;count()&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;mean()&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;std()&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="s2">&quot;{:.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;min()&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;max()&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;q1()&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;q2()&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.50</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;q3()&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;skew()&quot;</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="s2">&quot;{:.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">())</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">],</span>
+     <span class="p">]</span>
 
-display(HTML(tabulate.tabulate(table, tablefmt='html')))
-</code></pre>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">tabulate</span><span class="o">.</span><span class="n">tabulate</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;html&#39;</span><span class="p">)))</span>
+</pre></div>
 
 <table>
 <tbody>
